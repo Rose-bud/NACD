@@ -1,26 +1,11 @@
-The datasets we used were open and publicly available, and we correctly added references.
-
-Train the model:
-
-install the requirements
-
-```
-pip install -r requirements.txt
-```
-
-generate the `.h5` files
+Before running the main script, you need to generate the .h5 file and the redundant annotations. To do this, run tools.py and generate.py:
 
 ```
 python ./NACD/utils/tools.py
-```
-
-generate the redundant annotations
-
-```
 python ./noise_label/generate.py
 ```
 
-train the model
+After the .h5 file and the redundant annotations are generated, you can train the model as follows:
 
 ```
 python ./NACD/train.py --Lambda=0.2 --alpha=0.3 --beta=0.7
